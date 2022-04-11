@@ -1,10 +1,13 @@
 import React from 'react'
 
-import { ExampleComponent } from '../../src/index'
+import { useStorageKit } from '../../src/index'
 import 'react-storage-kit/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  const storage = useStorageKit()
+  return <div>
+
+  </div>
 }
 
 export default App

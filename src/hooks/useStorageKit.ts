@@ -6,19 +6,19 @@ const useStorageKit = () => {
   const [data, setData] = useLocalStorage(keyStorage);
   const storage = {
     getAll: () => data,
-    getMultiple: ([]) => {},
-    getItem: (key) => {
+    getMultiple: ([]) => { },
+    getItem: (key: string) => {
       try {
         return data[key];
       } catch (e) {
         return false;
       }
     },
-    setItem: (key, value) => {
+    setItem: (key: string, value: any) => {
       setData({ ...data, [key]: value });
     },
-    removeItem: () => {},
-    clear: () => {},
+    removeItem: () => { },
+    clear: () => { },
   };
   return storage;
 };

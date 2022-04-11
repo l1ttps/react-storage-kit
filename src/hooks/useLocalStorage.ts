@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { getStorage, setStorage } from '../utils/syncStorage'
-const useLocalStorage = (key: string, initialValue: any) => {
+const useLocalStorage = (key: string, initialValue?: any) => {
   const [storedValue, setStoredValue] = useState(() => {
     if (typeof window === 'undefined') {
       return initialValue
