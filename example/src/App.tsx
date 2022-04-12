@@ -1,13 +1,22 @@
 import React from 'react'
 
-import { useStorageKit } from '../../src/index'
-import 'react-storage-kit/dist/index.css'
+import { useStorageKit } from 'react-storage-kit'
 
 const App = () => {
   const storage = useStorageKit()
-  return <div>
+  console.log(storage.getAll())
 
-  </div>
+  return (
+    <div>
+      <button
+        onClick={() => {
+          storage.setItem('test', 123)
+        }}
+      >
+        click me
+      </button>
+    </div>
+  )
 }
 
 export default App
