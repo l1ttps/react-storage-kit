@@ -9977,13 +9977,12 @@
   optionalDependencies:
     "fsevents" "2.1.2"
 
-"react-storage-kit@file:":
-  "resolved" "file:"
+"react-storage-kit@file:../../../usr/local/nvm/versions/node/v12.14.1/lib/node_modules/react-storage-kit":
+  "resolved" "file:../../../usr/local/nvm/versions/node/v12.14.1/lib/node_modules/react-storage-kit"
   "version" "0.0.1"
   dependencies:
     "crypto-js" "^4.1.1"
     "murmurhash-js" "^1.0.0"
-    "react-storage-kit" "file:"
 
 "react@*", "react@^16.13.1", "react@^16.14.0":
   "integrity" "sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g=="

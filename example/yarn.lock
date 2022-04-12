@@ -8959,8 +8959,8 @@ react-is@^17.0.1:
   optionalDependencies:
     fsevents "2.1.2"
 
-"react-storage-kit@file:..":
-  version "1.0.0"
+"react-storage-kit@file:../dist":
+  version "0.0.0"
 
 "react@file:../node_modules/react":
   version "16.14.0"

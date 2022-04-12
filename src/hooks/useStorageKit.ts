@@ -14,6 +14,7 @@ const useStorageKit = () => {
         return false
       }
     },
+    getKey: () => keyStorage,
     setItem: (key: string, value: any) => {
       setData({ ...data, [key]: value })
     },
