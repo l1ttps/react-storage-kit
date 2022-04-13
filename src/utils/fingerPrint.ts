@@ -6,7 +6,7 @@ import cryptoJs from "crypto-js";
 const getDeviceId = () =>
   sha256(hash(getBrowserData(), 256).toString()).toString(cryptoJs.enc.Hex);
 
-const genKeyStorage = () => {
+const genKeyStorage = (): string => {
   return getDeviceId().slice(0, 6);
 };
 
