@@ -5,35 +5,44 @@ const keyStorage = genKeyStorage()
 const useStorageKit = () => {
   const [data, setData] = useLocalStorage(keyStorage)
   const storage = {
-    getAll: () => data,
+    getAll: (): object => data,
+
     getMultiple: (keys: string[]) => {
+      if (!data) return {}
+      keys.forEach((key) => {
+        data.hasOwnProperty(key)
+      })
       return keys
     },
-    getItem: (key: string) => {
+
+    getItem: (key: string): object | string | number | null => {
       try {
         return data[key]
       } catch (e) {
-        return false
+        return null
       }
     },
-    getKey: () => keyStorage,
-    setItem: (key: string, value: any) => {
+
+    getKey: (): string => keyStorage,
+
+    setItem: (key: string, value: any): void => {
       setData({ ...data, [key]: value })
     },
 
-    removeItem: (key: string) => {
-      if(!data.hasOwnProperty(key)) throw new Error("khong co gi");
-      const _data = {...data}
+    removeItem: (key: string): void => {
+      if (!data.hasOwnProperty(key)) throw new Error("khong co gi");
+      const _data = { ...data }
       delete _data[key]
-      setData({..._data})
+      setData({ ..._data })
     },
 
-    clear: () => {
+    clear: (): void => {
       setData()
       localStorage.removeItem(keyStorage)
     }
   }
-  return storage
+
+  return storage;
 }
 
 export default useStorageKit

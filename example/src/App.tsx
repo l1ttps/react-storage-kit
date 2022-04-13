@@ -19,7 +19,7 @@ const App = () => {
       setNewValue(initialValue)
     }
   }
-
+  
   const handleClearAll = () => {
     storage.clear()
   }
