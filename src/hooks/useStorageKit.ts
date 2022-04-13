@@ -26,7 +26,10 @@ const useStorageKit = () => {
       setData({..._data})
     },
 
-    clear: () => {}
+    clear: () => {
+      setData()
+      localStorage.removeItem(keyStorage)
+    }
   }
   return storage
 }

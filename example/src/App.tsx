@@ -20,8 +20,7 @@ const App = () => {
   }
 
   const handleClearAll = () => {
-    localStorage.removeItem(key)
-    window.location.reload()
+    storage.clear()
   }
 
   const handleRemoveItem = (key: string) => {
