@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useStorageKit } from 'react-storage-kit'
-
+import ReactJson from 'react-json-view'
 const App = () => {
   const storage = useStorageKit()
   console.log(storage.getAll())
@@ -11,24 +11,32 @@ const App = () => {
     value: ''
   }
 
-  const handleSetNewValue = () => {
+  const handleSetNewValue = (event: any) => {
+    event.preventDefault();
     if ((newValue.key !== '', newValue.value !== '')) {
       storage.setItem(newValue.key, newValue.value)
       setNewValue(initialValue)
     }
   }
-  console.log(storage.removeItem());
-  
+
   const handleClearAll = () => {
     localStorage.removeItem(key)
     window.location.reload()
   }
+
+  const handleRemoveItem = (key: string) => {
+    storage.removeItem(key)
+  }
+
   const [newValue, setNewValue] = useState(initialValue)
   return (
     <div className='px-20 py-10'>
+    <h1 className='text-4xl mb-5'>
+    React Storage Kit Example
+    </h1>
       <div className='shadow-lg p-5 rounded-lg'>
         <div className='flex flex-row w-100 justify-between'>
-          <div>
+          <form onSubmit={handleSetNewValue}>
             <input
               placeholder='key'
               value={newValue.key}
@@ -51,7 +59,7 @@ const App = () => {
             >
               Set
             </button>
-          </div>
+          </form>
           <div>
             <button
               onClick={handleClearAll}
@@ -71,7 +79,8 @@ const App = () => {
           <div>
             <b className='my-5'>react-storage-kit</b>
             <div className='border rounded-md h-96 p-5'>
-              {JSON.stringify(storage.getAll())}
+              {/* @ts-ignore */}
+              <ReactJson onDelete={(event) => event.name && handleRemoveItem(event.name)} key={1} src={storage.getAll()}></ReactJson>
             </div>
           </div>
         </div>

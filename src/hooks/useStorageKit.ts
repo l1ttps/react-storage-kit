@@ -18,9 +18,14 @@ const useStorageKit = () => {
     setItem: (key: string, value: any) => {
       setData({ ...data, [key]: value })
     },
-    removeItem: () => {
-      return 123
+
+    removeItem: (key: string) => {
+      if(!data.hasOwnProperty(key)) throw new Error("khong co gi");
+      const _data = {...data}
+      delete _data[key]
+      setData({..._data})
     },
+
     clear: () => {}
   }
   return storage
