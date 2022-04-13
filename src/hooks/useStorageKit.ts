@@ -18,7 +18,9 @@ const useStorageKit = () => {
     setItem: (key: string, value: any) => {
       setData({ ...data, [key]: value })
     },
-    removeItem: () => {},
+    removeItem: () => {
+      return 123
+    },
     clear: () => {}
   }
   return storage

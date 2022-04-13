@@ -17,7 +17,8 @@ const App = () => {
       setNewValue(initialValue)
     }
   }
-
+  console.log(storage.removeItem());
+  
   const handleClearAll = () => {
     localStorage.removeItem(key)
     window.location.reload()
