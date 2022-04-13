@@ -6,7 +6,9 @@ const useStorageKit = () => {
   const [data, setData] = useLocalStorage(keyStorage)
   const storage = {
     getAll: () => data,
-    getMultiple: ([]) => {},
+    getMultiple: (keys: string[]) => {
+      return keys
+    },
     getItem: (key: string) => {
       try {
         return data[key]
