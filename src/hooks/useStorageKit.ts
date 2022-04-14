@@ -33,7 +33,7 @@ const useStorageKit = () => {
     },
 
     removeItem: (key: string): void => {
-      if (!data.hasOwnProperty(key)) throw new Error("khong co gi");
+      if (!data.hasOwnProperty(key)) return;
       const _data = { ...data }
       delete _data[key]
       setData({ ..._data })
