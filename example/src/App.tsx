@@ -4,6 +4,8 @@ import ReactJson from 'react-json-view'
 
 const App = () => {
   const storage = useStorageKit()
+  console.log(storage.getAll());
+  
   const key = storage.getKey()
   const valueLocalStorage = localStorage.getItem(key)
   const initialValue = {

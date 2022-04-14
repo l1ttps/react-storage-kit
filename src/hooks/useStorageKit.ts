@@ -4,8 +4,9 @@ import { useLocalStorage } from './useLocalStorage'
 const keyStorage = genKeyStorage()
 
 const useStorageKit = (): StorageKit => {
-  const [data, setData] = useLocalStorage(keyStorage)
+  const [data, setData] = useLocalStorage(keyStorage, {})
   const storage: StorageKit = {
+
     getAll: (): object => data,
 
     getMultiple: (keys: string[]) => {

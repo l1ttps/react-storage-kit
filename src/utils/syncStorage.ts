@@ -18,7 +18,7 @@ function getStorage(): object {
     return JSON.parse(decrypt);
   }
   catch (e) {
-    return {}
+   throw new Error("This browser cannot be identified")
   }
 };
 
