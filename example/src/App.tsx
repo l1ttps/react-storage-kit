@@ -5,6 +5,7 @@ import ReactJson from 'react-json-view'
 const App = () => {
   const storage = useStorageKit()
   console.log(storage.getAll());
+  console.log(Math.floor(Date.now() / 1000));
   
   const key = storage.getKey()
   const valueLocalStorage = localStorage.getItem(key)
@@ -99,7 +100,7 @@ const App = () => {
           </div>
           <div>
             <b className='my-5'>react-storage-kit</b>
-            <div className='border rounded-md h-96 p-5 truncate '>
+            <div className='border rounded-md h-96 p-5 truncate overflow-y-auto'>
               {/* @ts-ignore */}
               <ReactJson onDelete={(event) => event.name && handleRemoveItem(event.name)} key={1} src={storage.getAll()}></ReactJson>
             </div>

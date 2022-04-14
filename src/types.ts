@@ -33,8 +33,9 @@ export interface StorageKit {
     *
     * @param key - key to set value
     * @param value - value
+    * @param exp - expiration time
     */
-    setItem(key: string, value: object | string | number): void,
+    setItem(key: string, value: object | string | number, exp?: number): void,
 
     /**
     * Remove a value in StorageKit
