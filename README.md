@@ -38,7 +38,7 @@ const storage = useStorageKit()
 
 <hr/>
 
-##getAll()
+#### getAll()
 Return all value in Storage Kit
 ```tsx
 import React, { useState } from 'react'
@@ -58,7 +58,8 @@ export default MyComponent;
 ```
 
 <hr/>
-##getMultiple(`string[]`)
+
+#### getMultiple(`string[]`)
 Return multiple value  in Storage Kit
 
 ```tsx
@@ -86,7 +87,8 @@ export default MyComponent;
 
 
 <hr/>
-##setItem(`key: string`,`value: object | string | number`)
+
+#### setItem(`key: string`,`value: object | string | number`)
 Set key value  StorageKit
 
 ```tsx
@@ -112,7 +114,8 @@ export default MyComponent;
 
 
 <hr/>
-##removeItem(`key: string`)
+
+#### removeItem(`key: string`)
 Delete a value in StorageKit 
 
 ```tsx
@@ -137,7 +140,8 @@ export default MyComponent;
 ```
 
 <hr/>
-##clear()
+
+#### clear()
 delete all values ​​stored in StorageKit
 
 ```tsx
@@ -160,6 +164,6 @@ const MyComponent = () => {
 
 export default MyComponent;
 ```
-## License
+##License
 
 MIT © [l1ttps](https://github.com/l1ttps)
