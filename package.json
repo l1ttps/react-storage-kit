@@ -1,7 +1,7 @@
 {
   "name": "react-storage-kit",
   "version": "0.0.1",
-  "description": "Localstorage Library for React Js",
+  "description": "Local storage encryption Library for React Js",
   "author": "l1ttps",
   "license": "MIT",
   "repository": "l1ttps/react-storage-kit",
