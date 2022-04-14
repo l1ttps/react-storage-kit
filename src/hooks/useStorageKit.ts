@@ -1,10 +1,11 @@
+import { StorageKit } from '../types'
 import { genKeyStorage } from '../utils/fingerPrint'
 import { useLocalStorage } from './useLocalStorage'
 const keyStorage = genKeyStorage()
 
-const useStorageKit = () => {
+const useStorageKit = (): StorageKit => {
   const [data, setData] = useLocalStorage(keyStorage)
-  const storage = {
+  const storage: StorageKit = {
     getAll: (): object => data,
 
     getMultiple: (keys: string[]) => {

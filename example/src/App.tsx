@@ -10,7 +10,6 @@ const App = () => {
     key: '',
     value: ''
   }
-
   const handleSetNewValue = (event: any) => {
     event.preventDefault();
     if ((newValue.key !== '' || newValue.value !== '')) {
@@ -46,7 +45,7 @@ const App = () => {
               onChange={(e) =>
                 setNewValue({ ...newValue, key: e.target.value })
               }
-              className='border rounded-md p-2 lg:mr-3 mb-1 lg:mb-0'
+              className='border rounded-md px-2 lg:mr-3 mb-1 lg:mb-0'
             />
             <input
               placeholder='value'
@@ -54,11 +53,11 @@ const App = () => {
                 setNewValue({ ...newValue, value: e.target.value })
               }
               value={newValue.value}
-              className='border rounded-md p-2 lg:mr-3 mb-1 lg:mb-0'
+              className='border rounded-md px-2 lg:mr-3 mb-1 lg:mb-0'
             />
             <button
               onClick={handleSetNewValue}
-              className='bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 rounded'
+              className='bg-blue-500 hover:bg-blue-700 text-white font-bold px-2 rounded'
             >
               Set
             </button>
