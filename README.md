@@ -11,10 +11,12 @@
 - The stored value can only be modified through the provided functions, avoiding inspection via the browser's Develop Tools.
 - Direct synchronization with local storage every time the value changes
 
-####Coming soon
+#### Coming soon
 - When setting a value to StorageKit can include an expiration time (like cookies). 
 - If the value stored in StorageKit expires, null will be returned
 
+## Demo
+<a href="https://l1ttps.github.io/react-storage-kit/" target="_blank">React Storage Kit Example</a>
 ## Installation
 
 ```bash
@@ -164,6 +166,6 @@ const MyComponent = () => {
 
 export default MyComponent;
 ```
-##License
+## License
 
 MIT © [l1ttps](https://github.com/l1ttps)
