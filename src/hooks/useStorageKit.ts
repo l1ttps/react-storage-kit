@@ -8,11 +8,14 @@ const useStorageKit = () => {
     getAll: (): object => data,
 
     getMultiple: (keys: string[]) => {
+      const result = {}
       if (!data) return {}
       keys.forEach((key) => {
-        data.hasOwnProperty(key)
+        if (data.hasOwnProperty(key)) {
+          result[key] = data[key]
+        }
       })
-      return keys
+      return result
     },
 
     getItem: (key: string): object | string | number | null => {
@@ -25,12 +28,12 @@ const useStorageKit = () => {
 
     getKey: (): string => keyStorage,
 
-    setItem: (key: string, value: any): void => {
+    setItem: (key: string, value: object | string | number): void => {
       setData({ ...data, [key]: value })
     },
 
     removeItem: (key: string): void => {
-      if (!data.hasOwnProperty(key)) throw new Error("khong co gi");
+      if (!data.hasOwnProperty(key)) return;
       const _data = { ...data }
       delete _data[key]
       setData({ ..._data })
