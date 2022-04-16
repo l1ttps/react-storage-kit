@@ -9,7 +9,7 @@ const setStorage = (value: any) => {
   localStorage.setItem(keyStorage, encrypt as any);
 };
 
-const getStorage = () => {
+function getStorage(): object {
   try {
     const decrypt = cryptoJs.AES.decrypt(
       localStorage.getItem(keyStorage) as any,
@@ -18,7 +18,7 @@ const getStorage = () => {
     return JSON.parse(decrypt);
   }
   catch (e) {
-    return null
+   throw new Error("This browser cannot be identified")
   }
 };
 
